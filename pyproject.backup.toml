@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "athercore"
+version = "0.1.0"
+description = "Athercore trading system"
+authors = ["Camer <you@example.com>"]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

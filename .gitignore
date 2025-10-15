@@ -1,0 +1,10 @@
+﻿.env
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+poetry.lock
+*.db
+artifacts/
+vectorbt_data/
