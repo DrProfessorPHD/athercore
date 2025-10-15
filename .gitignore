@@ -1,10 +1,23 @@
-﻿.env
+﻿# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.pytest_cache/
-poetry.lock
-*.db
+
+# Envs & config
+.venv/
+.env
+.env.*
+
+# Build / artifacts / data
+dist/
+build/
 artifacts/
 vectorbt_data/
+
+# Editors
+.vscode/
+.idea/
