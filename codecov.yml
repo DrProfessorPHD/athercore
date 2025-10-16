@@ -1,0 +1,20 @@
+﻿coverage:
+  status:
+    project:
+      default:
+        # Start modest; ratchet up later
+        target: 60%
+        threshold: 2%
+    patch:
+      default:
+        # Don’t fail on small PRs initially
+        target: 50%
+        threshold: 5%
+
+ignore:
+  - "tests/**"
+  - "infra/**"
+  - ".github/**"
+  - "vectorbt_data/**"
+
+comment: false
