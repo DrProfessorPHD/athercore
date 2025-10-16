@@ -8,26 +8,41 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test-lint:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
+          cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install runtime deps (requirements.txt)
         run: |
-          pip install poetry
-          poetry install
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Install dev tools (pre-commit, pytest, mypy, ruff, detect-secrets)
+        run: |
+          pip install pre-commit pytest pytest-cov mypy ruff detect-secrets
+
+      - name: Prepare detect-secrets baseline if missing
+        run: |
+          if [ ! -f .secrets.baseline ]; then
+            detect-secrets scan --all-files . > .secrets.baseline
+          fi
+
+      - name: Run pre-commit on all files
+        run: |
+          pre-commit run --all-files
 
       - name: Run tests with coverage
         run: |
-          poetry run pytest --cov=apps --cov=core --cov-report=xml:coverage.xml
+          pytest --cov=apps --cov=core --cov-report=xml:coverage.xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
