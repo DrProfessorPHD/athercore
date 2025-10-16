@@ -1,50 +1,10 @@
-﻿# \# Athercore
+﻿
 
-# 
-
-# \[!\[CI](https://github.com/DrProfessorPHD/athercore/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/DrProfessorPHD/athercore/actions/workflows/ci.yml)
-
-# 
-
-# Athercore is a backtesting and quantitative analysis framework built with \*\*FastAPI\*\*, \*\*VectorBT\*\*, and \*\*Poetry\*\*.
-
-# 
-
-# \## 🚀 Features
-
-# \- REST API for backtesting via FastAPI  
-
-# \- Modular signal generation system (e.g. SMA strategies)  
-
-# \- Integrated Docker + Poetry setup for reproducible builds  
-
-# \- Pre-commit hooks for formatting, linting, and security scanning  
-
-# 
-
-# \## 🧠 Getting Started
-
-# 1\. Clone the repo:
-
-# &nbsp;  ```bash
-
-# &nbsp;  git clone https://github.com/DrProfessorPHD/athercore.git
-
-# &nbsp;  cd athercore 
-
-# 
-
-# docker compose up --build 
-
-# 
-
-# http://0.0.0.0:8000 
-
-# 
-
-# poetry run pytest
+\# athercore
 
 
+
+!\[CI](https://github.com/DrProfessorPHD/athercore/actions/workflows/ci.yml/badge.svg)
 
 
 
