@@ -30,3 +30,9 @@ ignore_missing_imports = true
 disallow_untyped_defs = false
 disallow_untyped_decorators = false
 disable_error_code = ["misc"]
+
+[dependency-groups]
+dev = [
+    "pytest-cov (>=7.0.0,<8.0.0)",
+    "pre-commit (>=4.3.0,<5.0.0)"
+]
